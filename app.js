@@ -30,7 +30,7 @@ app.use('/api/users', userRouter);
 app.use(express.static(path.join(__dirname, './client/build'))); // Route pour les pages non trouvées, redirige vers index.html 
 app.get('*', (req, res) => { res.sendFile(path.join(__dirname, './client/build/index.html')); });
 
-app.listen(process.env.PORT,function(){
+/* app.listen(process.env.PORT,function(){
     console.log("serveur is listen on port 2000")
-})
+})*/ 
 module.exports=app;

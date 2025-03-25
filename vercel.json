@@ -1,10 +1,11 @@
 {
     "version": 2,
-    "name": "nodejs-prisma",
+    "name": "pfe2025",
     "builds": [
       { "src": "app.js", "use": "@vercel/node" }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "/app.js" }
+      { "src": "/api/(.*)", "dest": "/app.js" }
     ]
   }
+  
