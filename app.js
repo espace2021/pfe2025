@@ -13,9 +13,6 @@ app.use(cors())
 dotenv.config()
 const path = require('path'); // Ajout de l'importation de path
 
-//dist reactjs
-app.use(express.static(path.join(__dirname, './client/build'))); // Route pour les pages non trouvées, redirige vers index.html 
-app.get('*', (req, res) => { res.sendFile(path.join(__dirname, './client/build/index.html')); });
 
 //connection base de donnée
 mongoose.connect("mongodb+srv://hsan:hsan@cluster0.9pyz2.mongodb.net/dbcommerce")
@@ -28,6 +25,10 @@ app.use('/api/scategories', scategorieRouter)
 app.use("/api/marques",MarqueRouter)
 app.use("/api/produits", ProduitRouter)
 app.use('/api/users', userRouter);
+
+//dist reactjs
+app.use(express.static(path.join(__dirname, './client/build'))); // Route pour les pages non trouvées, redirige vers index.html 
+app.get('*', (req, res) => { res.sendFile(path.join(__dirname, './client/build/index.html')); });
 
 app.listen(process.env.PORT,function(){
     console.log("serveur is listen on port 2000")
