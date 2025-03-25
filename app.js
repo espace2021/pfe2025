@@ -17,7 +17,6 @@ const path = require('path'); // Ajout de l'importation de path
 app.use(express.static(path.join(__dirname, './client/build'))); // Route pour les pages non trouvées, redirige vers index.html 
 app.get('*', (req, res) => { res.sendFile(path.join(__dirname, './client/build/index.html')); });
 
-
 //connection base de donnée
 mongoose.connect("mongodb+srv://hsan:hsan@cluster0.9pyz2.mongodb.net/dbcommerce")
 .then(()=>{console.log("connection a la base de données reussie")})
