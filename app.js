@@ -28,8 +28,8 @@ app.use('/api/scategories', scategorieRouter)
 app.use("/api/marques",MarqueRouter)
 app.use("/api/produits", ProduitRouter)
 app.use('/api/users', userRouter);
-PORT=2000
-app.listen(PORT,function(){
+
+app.listen(process.env.PORT,function(){
     console.log("serveur is listen on port 2000")
 })
 module.exports=app;
